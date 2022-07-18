@@ -1,9 +1,13 @@
-input{
+fieldset{
+  border: none;
+}
+select, input{
   border-radius: 1rem;
-  width: 90%;
+  width: 100%;
   padding:5px;
   margin:auto;
 }
+select{min-width: 170px;}
 #sub{
   color:white;
   background-color: #6c63ff;
