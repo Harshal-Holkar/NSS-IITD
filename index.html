@@ -27,12 +27,13 @@
                         <input type="text" id="Name" name="Name" data-aos="fade-up">
                     </fieldset>
                     <fieldset>
-                        <label for="dropdown">Program:</label><br>
+                        <label for="dropdown">Program:</label>
                         <select id =Programs>
-                            <option id="UG" name="UG">UG</option>
-                            <option id="PG" name="PG">PG</option>
+                            <option id="UG" name="UG">Uudergraduate</option>
+                            <option id="PG" name="PG">Postgraduate</option>
                             <option id="Faculty" name="Faculty">Faculty</option>
                             <option id="Staff" name="Staff">Staff</option>
+                            <option id="Others" name="Others">Others</option>
                         </select>
                     </fieldset>
                     <fieldset id = etn>
@@ -41,15 +42,21 @@
                     </fieldset>
                     <fieldset>
                         <label for="Contact"  data-aos="fade-up"  >Contact Number:</label>
-                        <input type="text" id="Contact" name="Contact" pattern="[0-9]{10}" data-aos="fade-up">
+                        <input type="text" id="Contact" name="Contact" pattern="[+0-9]{10,}" data-aos="fade-up">
                     </fieldset>
                     <fieldset>
-                        <label for="Email"  data-aos="fade-up"  >Email:</label>
+                        <label for="Email"  data-aos="fade-up"  >Personal Gmail:</label>
                         <input type="text" id="Email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" data-aos="fade-up">
                     </fieldset>
+                    
                     <fieldset>
-                        <label for="Hostel"  data-aos="fade-up"  >Hostel:</label>
-                        <input type="text" id="Hostel" name="Hostel" data-aos="fade-up">
+                        <label for="Email"  data-aos="fade-up"  >IIT Email:</label>
+                        <input type="text" id="IITEmail" name="IITEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" data-aos="fade-up">
+                    </fieldset>
+
+                    <fieldset>
+                        <label for="Hostel">Hostel:</label>
+                        <input type="text" id="Hostel" name="Hostel">
                     </fieldset>
                     <input type="Submit" value="Register!" id="sub">
             </div>
@@ -67,16 +74,11 @@
         case 'UG':
             myf1();
             break;
-    case 'PG':
-        open("https://groups.google.com/g/nss-test-3");
+        case 'PG':
+            open("https://groups.google.com/g/nss-test-3");
             break;
-    case 'Faculty':
-        open("https://groups.google.com/g/nss-test-4");
-            break;
-    case 'Staff':
-        open("https://groups.google.com/g/nss-test-5");
-            break;
-    default:
+        default:
+            open("https://groups.google.com/g/nss-test-5");
             break;
     }
    }     
@@ -87,6 +89,15 @@ function myf1(){
                 open("https://groups.google.com/g/nss-test-1");
             }
             else if (year=='2021'){
+                open("https://groups.google.com/g/nss-test-2");
+            }
+            else if (year=='2022'){
+                open("https://groups.google.com/g/nss-test-2");
+            }
+            else if (year=='2018'){
+                open("https://groups.google.com/g/nss-test-2");
+            }
+            else if (year=='2019'){
                 open("https://groups.google.com/g/nss-test-2");
             }
         }

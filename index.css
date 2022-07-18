@@ -1,5 +1,8 @@
 fieldset{
   border: none;
+  display:grid;
+  display:-ms-grid;
+  place-items: center;
 }
 select, input{
   border-radius: 1rem;
@@ -24,7 +27,8 @@ form{
   display: grid;
   place-items: center;
 }
-.wrapper {
+
+.wrapper{
   min-height: 100vh;
   color: #000;
   font-family: 'Muli', sans-serif;
@@ -39,7 +43,7 @@ form{
 .container {
   background-color: #fff;
   padding: 1em;
-  border-radius: 1em;
+  min-width: 30vw;
   max-width: 100%;
   display: -ms-grid;
   display: grid;
@@ -48,19 +52,8 @@ form{
           box-shadow: 0px 17px 34px -20px #f55951;
 }
 
-.title {
-  font-size: 1.6rem;
-  font-weight: 700;
-}
-
-.container {
-  max-width: 100%;
-  overflow: hidden;
-  padding: 0;
-}
-
 .img {
-  width: auto;
+  width: 200px;
   height: auto;
   border-radius: 1em 1em 0 0;
   position: relative;
@@ -70,10 +63,6 @@ form{
   height: auto;
   overflow: hidden;
   margin-bottom: 1em;
-}
-
-.title {
-  margin-bottom: 0.9em;
 }
 
 .subtitle {
