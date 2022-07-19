@@ -1,108 +1,125 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Subscribe</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="index.css">
-        <title>Suscribe</title>
+
+<head>
+    <title>Subscribe</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+    <title>Suscribe</title>
     <!-- Reset styles -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
     <link rel="shortcut-icon" href="NSS logo.png">
     <!-- Google Fonts Muli -->
-    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;700&display=swap" rel="stylesheet"> 
-    </head>
-    <body>
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
     <section class="wrapper">
         <div class="container">
-            <div class="img__container"  data-aos="fade-down">
-            <img src="NSS logo.png" alt="nsslogo" class="img"> 
-        </div> 
-        <form class="gform" method="POST" data-email="chopra.kavya04@gmail.com" action="https://script.google.com/macros/s/AKfycbz_Kew0DZq-mlNoYyZGmaLYH9Rh2Ge2apuBTkItze1KQeSqc9W9hvD0r8q8q1tI4rpp/exec"  onsubmit="myf()"> 
-            <div class="content">
-                <h2 class="subtitle" data-aos="fade-up">Register today</h2>
+            <div class="img__container" data-aos="fade-down">
+                <img src="NSS logo.png" alt="nsslogo" class="img">
+            </div>
+            <form class="gform" method="POST" data-email="chopra.kavya04@gmail.com"
+                action="https://script.google.com/macros/s/AKfycbz_Kew0DZq-mlNoYyZGmaLYH9Rh2Ge2apuBTkItze1KQeSqc9W9hvD0r8q8q1tI4rpp/exec"
+                onsubmit="myf()">
+                <div class="content">
+                    <h2 class="subtitle" data-aos="fade-up">Register today</h2>
                     <fieldset>
-                        <label for="Name"  data-aos="fade-up"  >Name:</label>
-                        <input type="text" id="Name" name="Name" data-aos="fade-up">
+                        <label for="Name" data-aos="fade-up">Name:</label>
+                        <input type="text" id="Name" name="Name" data-aos="fade-up" required>
                     </fieldset>
                     <fieldset>
                         <label for="dropdown">Program:</label>
-                        <select id =Programs>
-                            <option id="UG" name="UG">Uudergraduate</option>
+                        <select id=Programs required>
+                            <option disabled selected value> -- select an option -- </option>
+                            <option id="UG" name="UG">Undergraduate</option>
                             <option id="PG" name="PG">Postgraduate</option>
                             <option id="Faculty" name="Faculty">Faculty</option>
                             <option id="Staff" name="Staff">Staff</option>
                             <option id="Others" name="Others">Others</option>
                         </select>
                     </fieldset>
-                    <fieldset id = etn>
-                        <label for="Entry no"  data-aos="fade-up">Entry Number:</label>
-                        <input type="text" id="Entryno"  name="Entryno" pattern="[A-Z0-9]{11}" data-aos="fade-up">
+                    <fieldset id=etn style="display:none;">
+                        <label for="Entry no" data-aos="fade-up">Entry Number:</label>
+                        <input type="text" id="Entryno" name="Entryno" pattern="[A-Z0-9]{11}" data-aos="fade-up">
                     </fieldset>
                     <fieldset>
-                        <label for="Contact"  data-aos="fade-up"  >Contact Number:</label>
-                        <input type="text" id="Contact" name="Contact" pattern="[+0-9]{10,}" data-aos="fade-up">
+                        <label for="Contact" data-aos="fade-up">Contact Number:</label>
+                        <input type="text" id="Contact" name="Contact" pattern="[+0-9]{10,}" data-aos="fade-up"
+                            required>
                     </fieldset>
                     <fieldset>
-                        <label for="Email"  data-aos="fade-up"  >Personal Gmail:</label>
-                        <input type="text" id="Email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" data-aos="fade-up">
+                        <label for="Email" data-aos="fade-up">Personal Gmail:</label>
+                        <input type="text" id="Email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            data-aos="fade-up" required>
                     </fieldset>
-                    
+
                     <fieldset>
-                        <label for="Email"  data-aos="fade-up"  >IIT Email:</label>
-                        <input type="text" id="IITEmail" name="IITEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" data-aos="fade-up">
+                        <label for="Email" data-aos="fade-up">IIT Email:</label>
+                        <input type="text" id="IITEmail" name="IITEmail"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" data-aos="fade-up" required>
                     </fieldset>
 
                     <fieldset>
                         <label for="Hostel">Hostel:</label>
-                        <input type="text" id="Hostel" name="Hostel">
+                        <input type="text" id="Hostel" name="Hostel" required>
                     </fieldset>
                     <input type="Submit" value="Register!" id="sub">
-            </div>
-        </form> 
+                </div>
+            </form>
         </div>
     </section>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-//         document.getElementById('Program').addEventListener('input', function () {
-//             if (document.getElementById('Program').value=='UG'){document.getElementById('etn').style='display:block;'}
-// });
-   function myf(){
-    let prog=document.getElementById('Programs').value;
-    switch (prog) {
-        case 'UG':
-            myf1();
-            break;
-        case 'PG':
-            open("https://groups.google.com/g/nss-test-3");
-            break;
-        default:
-            open("https://groups.google.com/g/nss-test-5");
-            break;
-    }
-   }     
-function myf1(){
-            let s=document.getElementById('Entryno').value;
-            let year=s.slice(0,4);
-            if (year=='2020'){
+        document.getElementById('Programs').addEventListener('input', function () {
+            if (['Undergraduate', 'Postgraduate'].includes(document.getElementById('Programs').value)) {
+                let element = document.getElementById('etn');
+                element.style = 'display:grid;';
+                element.required = true;
+            }
+            else {
+                let element = document.getElementById('etn');
+                element.style = 'display:none;';
+                element.required = false;
+            }
+        });
+        function myf() {
+            let prog = document.getElementById('Programs').value;
+            switch (prog) {
+                case 'UG':
+                    myf1();
+                    break;
+                case 'PG':
+                    open("https://groups.google.com/g/nss-test-3");
+                    break;
+                default:
+                    open("https://groups.google.com/g/nss-test-5");
+                    break;
+            }
+        }
+        function myf1() {
+            let s = document.getElementById('Entryno').value;
+            let year = s.slice(0, 4);
+            if (year == '2020') {
                 open("https://groups.google.com/g/nss-test-1");
             }
-            else if (year=='2021'){
+            else if (year == '2021') {
                 open("https://groups.google.com/g/nss-test-2");
             }
-            else if (year=='2022'){
+            else if (year == '2022') {
                 open("https://groups.google.com/g/nss-test-2");
             }
-            else if (year=='2018'){
+            else if (year == '2018') {
                 open("https://groups.google.com/g/nss-test-2");
             }
-            else if (year=='2019'){
+            else if (year == '2019') {
                 open("https://groups.google.com/g/nss-test-2");
             }
         }
     </script>
     <script>
         AOS.init();
-      </script>
+    </script>
 </body>
