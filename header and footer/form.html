@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Subscribe</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+    <title>Suscribe</title>
+    <!-- Reset styles -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
+    <link rel="shortcut-icon" href="NSS logo.png">
+    <!-- Google Fonts Muli -->
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <section class="wrapper">
+        <div class="container">
+            <div class="img__container" data-aos="fade-down">
+                <img src="NSS logo.png" alt="nsslogo" class="img">
+            </div>
+            <form class="gform pure-form pure-form-stacked" method="POST" data-email="chopra.kavya04@gmail.com"
+                action="https://script.google.com/macros/s/AKfycby2597__TkjBVEjOm-Y3kQrvc_fAR9equkjyuppdQc_OPERvb1icF1mqOet9BXy4Jny/exec"
+                onsubmit="myf()">
+                <div class="content">
+                    <h2 class="subtitle" data-aos="fade-up">Register today</h2>
+                    <fieldset class="pure-group">
+                        <label for="Name" data-aos="fade-up">Name:</label>
+                        <input type="text" id="Name" name="Name" data-aos="fade-up" required>
+                    </fieldset>
+                    <fieldset class="pure-group">
+                        <label for="dropdown">Program:</label>
+                        <select id="Programs" name="Programs" required>
+                            <option disabled selected value> -- select an option -- </option>
+                            <option>Undergraduate</option>
+                            <option>Postgraduate</option>
+                            <option>Faculty</option>
+                            <option>Staff</option>
+                            <option>Others</option>
+                        </select>
+                    </fieldset class="pure-group">
+                    <fieldset id=etn style="display:none;">
+                        <label for="Entry no" data-aos="fade-up">Entry Number:</label>
+                        <input type="text" id="Entryno" name="Entryno" pattern="[A-Z0-9]{11}" data-aos="fade-up">
+                    </fieldset>
+                    <fieldset class="pure-group">
+                        <label for="Contact" data-aos="fade-up">Contact Number:</label>
+                        <input type="text" id="Contact" name="Contact" pattern="[+0-9]{10,}" data-aos="fade-up"
+                            required>
+                    </fieldset>
+                    <fieldset class="pure-group">
+                        <label for="Email" data-aos="fade-up">Personal Gmail:</label>
+                        <input type="text" id="Email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                            data-aos="fade-up" required>
+                    </fieldset>
+
+                    <fieldset class="pure-group">
+                        <label for="Email" data-aos="fade-up">IIT Email:</label>
+                        <input type="text" id="IITEmail" name="IITEmail"
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" data-aos="fade-up" required>
+                    </fieldset>
+
+                    <fieldset class="pure-group">
+                        <label for="Hostel">Hostel:</label>
+                        <input type="text" id="Hostel" name="Hostel" required>
+                    </fieldset>
+                    <input type="Submit" value="Register!" id="sub">
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.getElementById('Programs').addEventListener('input', function () {
+            if (['Undergraduate', 'Postgraduate'].includes(document.getElementById('Programs').value)) {
+                let element = document.getElementById('etn');
+                element.style = 'display:grid;';
+                element.required = true;
+            }
+            else {
+                let element = document.getElementById('etn');
+                element.style = 'display:none;';
+                element.required = false;
+            }
+        });
+        function myf() {
+            let prog = document.getElementById('Programs').value;
+            switch (prog) {
+                case 'Undergraduate':
+                    myf1();
+                    end()
+                    break;
+                case 'Postgraduate':
+                
+                    open("https://groups.google.com/u/3/g/nss_iitd_postgraduates");
+                    end()
+                    break;
+                default:
+                    open("https://groups.google.com/u/3/g/nss_iitd_faculty_staff");
+                    end()
+                    break;
+            }
+        }
+        function myf1() {
+            let s = document.getElementById('Entryno').value;
+            let year = s.slice(0, 4);
+            
+            if (year == '2020') {
+                open("https://groups.google.com/u/0/g/nss_iitd_2020/");
+            }
+            else if (year == '2021') {
+                open("https://groups.google.com/u/3/g/nss_iitd_2021");
+            }
+            else if (year == '2022') {
+                open("https://groups.google.com/u/3/g/nss_iitd_2022");
+            }
+            else if (year == '2019') {
+                open("https://groups.google.com/u/3/g/nss_iitd_2019");
+            }
+            else{
+                open("https://groups.google.com/u/3/g/nss_iitd_2018/")
+            }
+            end()
+        }
+        function end(){
+            setTimeout("window.close()",1000) 
+        }
+    </script>
+    <script>
+        AOS.init();
+    </script>
+</body>

@@ -1,0 +1,397 @@
+.new-section .member-wrap img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.new-section h2 {
+    text-align: center;
+    font-size: 2.4rem;
+}
+
+.new-section .at-section__title {
+    margin: 70px auto;
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    color: #373c46;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.new-section .at-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background: #FFF;
+}
+
+.new-section .at-grid[data-column="1"] .at-column {
+    margin: auto;
+    width: 20%;
+    max-width: 20%;
+    min-width: 20%;
+    flex-basis: 20%;
+    background: #FFF;
+}
+
+.new-section .at-grid[data-column="2"] .at-column {
+    margin: auto;
+    width: 20%;
+    max-width: 20%;
+    min-width: 20%;
+    flex-basis: 20%;
+}
+
+.new-section .at-grid[data-column="3"] .at-column {
+    margin: auto;
+    width: 20%;
+    max-width: 20%;
+    min-width: 20%;
+    flex-basis: 20%;
+}
+
+.new-section .at-grid[data-column="4"] .at-column {
+    margin: auto;
+    width: 33.333333%;
+    max-width: 33.333333%;
+    min-width: 33.333333%;
+    flex-basis: 33.333333%;
+}
+
+.new-section .at-grid[data-column="5"] .at-column {
+    margin: auto;
+    width: 20%;
+    max-width: 20%;
+    min-width: 20%;
+    flex-basis: 20%;
+}
+
+.new-section .at-grid[data-column="6"] .at-column {
+    width: 16.66667%;
+    max-width: 16.66667%;
+    min-width: 16.66667%;
+    flex-basis: 16.66667%;
+}
+
+.new-section .at-grid[data-column="7"] .at-column {
+    width: 14.28571%;
+    max-width: 14.28571%;
+    min-width: 14.28571%;
+    flex-basis: 14.28571%;
+}
+
+.new-section .at-grid[data-column="8"] .at-column {
+    width: 12.5%;
+    max-width: 12.5%;
+    min-width: 12.5%;
+    flex-basis: 12.5%;
+}
+
+.new-section .at-grid[data-column="9"] .at-column {
+    width: 11.11111%;
+    max-width: 11.11111%;
+    min-width: 11.11111%;
+    flex-basis: 11.11111%;
+}
+
+.new-section .at-grid[data-column="10"] .at-column {
+    width: 10%;
+    max-width: 10%;
+    min-width: 10%;
+    flex-basis: 10%;
+}
+
+.new-section .at-grid[data-column="11"] .at-column {
+    width: 9.09091%;
+    max-width: 9.09091%;
+    min-width: 9.09091%;
+    flex-basis: 9.09091%;
+}
+
+.new-section .at-grid[data-column="12"] .at-column {
+    width: 8.33333%;
+    max-width: 8.33333%;
+    min-width: 8.33333%;
+    flex-basis: 8.33333%;
+}
+
+.new-section .at-column {
+    z-index: 0;
+    position: relative;
+    background: #FFF;
+    cursor: pointer;
+    box-shadow: 0 0 0 1px #E2E9ED;
+    padding: 0px;
+    box-sizing: border-box;
+    transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0.2s ease;
+}
+
+.new-section .at-column:before {
+    content: "";
+    display: block;
+    padding-top: 69.99999%;
+}
+
+.new-section .at-column:hover {
+    z-index: 1;
+    box-shadow: 0 8px 50px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+    transition: box-shadow 0.2s ease, transform 0.2s ease, z-index 0s 0s ease;
+}
+
+.new-section .at-column:hover .at-social {
+    margin: 16px 0 0;
+    opacity: 1;
+}
+
+@media (max-width: 800px) {
+    .new-section .at-column {
+        width: 50% !important;
+        max-width: 50% !important;
+        min-width: 50% !important;
+        flex-basis: 50% !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .new-section .at-column {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 100% !important;
+        flex-basis: 100% !important;
+    }
+}
+
+.new-section .at-user {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translate(0, -50%);
+    text-align: center;
+}
+
+.new-section .at-user__avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    margin: 0 auto 20px;
+    overflow: hidden;
+}
+
+.new-section .at-user__avatar1 {
+    width: 150px;
+    height: 150px;
+    border-radius: 120%;
+    margin: 0 auto 20px;
+    overflow: hidden;
+}
+
+.new-section .at-user__avatar2 {
+    width: auto;
+    height: auto;
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 100%;
+    margin: 0 auto 20px;
+    overflow: hidden;
+}
+
+.new-section .at-user__avatar img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.new-section .at-user__name {
+    color: #313435;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.new-section .at-user__title {
+    color: #6F808A;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.875rem;
+    line-height: 2.375rem;
+}
+
+.new-section .at-social {
+    margin: 0 0 -18px;
+    opacity: 0;
+    transition: margin 0.2s ease, opacity 0.2s ease;
+}
+
+.new-section .at-social__item {
+    display: inline-block;
+    margin: 0 10px;
+    font-size: .8rem;
+}
+
+.new-section .container {
+    max-width: 1170px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    transform-origin: top center;
+}
+
+.info-project {
+    display: none;
+    padding: 5px;
+    background-color: grey;
+}
+
+.info-project img {
+    width: 300px;
+    height: auto;
+    padding: 5px;
+    border-radius: 3px;
+    float: left;
+}
+
+.info-project h3 {
+    color: white;
+    /*position: relative;
+    left: 0px;
+    top: -200px;*/
+}
+
+.info-project .info-detail {
+    color: white;
+}
+
+.close-button {
+    float: right;
+}
+
+/* Image hover*/
+
+/*!
+ * ImageHover.css - http://www.imagehover.io
+ * Version 1.0
+ * Author: CiarÃ¡n Walsh
+
+ * Made available under a MIT License:
+ * http://www.opensource.org/licenses/mit-license.php
+
+ */
+
+[class^='imghvr-'],
+[class*=' imghvr-'] {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    max-width: 100%;
+    /* background-color: #2266a5; */
+    color: #fff;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    -o-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+[class^='imghvr-']>img,
+[class*=' imghvr-']>img {
+    vertical-align: top;
+    max-width: 100%;
+}
+
+[class^='imghvr-'] figcaption,
+[class*=' imghvr-'] figcaption {
+    /* background-color: #135796; */
+    padding: 30px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* color: #ffffff; */
+    color: #313435;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+[class^='imghvr-'] figcaption h1,
+[class^='imghvr-'] figcaption h2,
+[class^='imghvr-'] figcaption h3,
+[class^='imghvr-'] figcaption h4,
+[class^='imghvr-'] figcaption h5,
+[class^='imghvr-'] figcaption h6,
+[class*=' imghvr-'] figcaption h1,
+[class*=' imghvr-'] figcaption h2,
+[class*=' imghvr-'] figcaption h3,
+[class*=' imghvr-'] figcaption h4,
+[class*=' imghvr-'] figcaption h5,
+[class*=' imghvr-'] figcaption h6 {
+    /* color: #ffffff; */
+    color: #313435;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+[class^='imghvr-'] a,
+[class*=' imghvr-'] a {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+[class^='imghvr-'],
+[class*=' imghvr-'],
+[class^='imghvr-']:before,
+[class^='imghvr-']:after,
+[class*=' imghvr-']:before,
+[class*=' imghvr-']:after,
+[class^='imghvr-'] *,
+[class*=' imghvr-'] *,
+[class^='imghvr-'] *:before,
+[class^='imghvr-'] *:after,
+[class*=' imghvr-'] *:before,
+[class*=' imghvr-'] *:after {
+    box-sizing: border-box;
+    -webkit-transition: all 0.35s ease;
+    -moz-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+}
+
+/* imghvr-fade-*
+   ----------------------------- */
+
+[class^='imghvr-fade'] figcaption,
+[class*=' imghvr-fade'] figcaption {
+    opacity: 0;
+}
+
+[class^='imghvr-fade']:hover>img,
+[class*=' imghvr-fade']:hover>img {
+    opacity: 0;
+}
+
+[class^='imghvr-fade']:hover figcaption,
+[class*=' imghvr-fade']:hover figcaption {
+    opacity: 1;
+}
+
+[class^='imghvr-fade']:hover>img,
+[class^='imghvr-fade']:hover figcaption,
+[class*=' imghvr-fade']:hover>img,
+[class*=' imghvr-fade']:hover figcaption {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+/* imghvr-fade
