@@ -1,62 +1,77 @@
-#formSec{
-    padding: 5rem 0 0 0;
-    background: linear-gradient(120deg, #e671a5 0%, #ffcfa9 70%); 
-}
-.formDiv{
-    display: grid;
-    place-items: center;
-}
-select, input{
-    border-radius: 1rem;
-    width: 100%;
-    padding:5px;
-    margin:auto;
-  }
-  fieldset{
-    display:grid;
-    place-items: center;
-  }
-  select{min-width: 170px;}
-#sub{
-  color:white;
-  background-color: #6c63ff;
-  border:none;
-}
-#sub:hover{
-  background-color: #060336;
-  cursor: pointer;
+#formSec {
+  padding: 5rem 0 0 0;
+  background: linear-gradient(120deg, #e671a5 0%, #ffcfa9 70%);
 }
 
-form{
-  max-width:768px;
-  display: -ms-grid;
+.formDiv {
   display: grid;
   place-items: center;
+  max-width: 768px;
+  font-size: large;
+}
+
+select,
+input {
+  border-radius: 1rem;
+  width: 100%;
+  padding: 10px;
+  margin: auto;
+  size:10px;
+}
+
+fieldset {
+  display: grid;
+  place-items: center;
+  width:60vw;
+}
+
+@media only screen and (max-width: 768px) {
+  fieldset {
+    max-width:768px;
+  }
+}
+.pure-group{
+  border: 0px;
+}
+
+select {
+  min-width: 170px;
 }
 
 .img {
-    width: 200px;
-    height: auto;
-    border-radius: 1em 1em 0 0;
-    position: relative;
-  }
-  
-  .img__container {
-    height: auto;
-    overflow: hidden;
-    margin-bottom: 1em;
-  }
+  width: 200px;
+  height: auto;
+  border-radius: 1em 1em 0 0;
+  position: relative;
+}
 
-  .content {
-    display: -ms-grid;
-    display: grid;
-    place-items: center;
-    padding: 0 2em;
-    margin-bottom: 1.8em;
-    transform: scale(1.2,1.1);
-  }
+.img__container {
+  height: auto;
+  overflow: hidden;
+  margin-bottom: 1em;
+}
 
-  .formSub{
-    margin: 1rem 0;
-    /* padding: 0.5rem 2rem; */
-  }
+.content {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  padding: 0 2em;
+  margin-bottom: 1.8em;
+  transform: scale(1.2, 1.1);
+}
+
+.formSub {
+  margin: 1rem 0;
+}
+
+#sub {
+  width:50%;
+  color: white;
+  background-color: #6c63ff;
+  border: none;
+}
+
+#sub:hover {
+  background-color: #060336;
+  cursor: pointer;
+}

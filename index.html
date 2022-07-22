@@ -235,13 +235,13 @@
         action="https://script.google.com/macros/s/AKfycby2597__TkjBVEjOm-Y3kQrvc_fAR9equkjyuppdQc_OPERvb1icF1mqOet9BXy4Jny/exec"
         onsubmit="myf()">
         <div class="content">
-          <h2 class="subtitle" data-aos="fade-up">Register today</h2>
+          <h2 class="subtitle" data-aos="fade-up">NSS IITD</h2>
           <fieldset class="pure-group">
-            <label for="Name" data-aos="fade-up">Name:</label>
+            <label for="Name" data-aos="fade-up">Name:</label><br>
             <input type="text" id="Name" name="Name" data-aos="fade-up" required>
           </fieldset>
           <fieldset class="pure-group">
-            <label for="dropdown">Program:</label>
+            <label for="dropdown">Program:</label><br>
             <select id="Programs" name="Programs" required>
               <option disabled selected value> -- select an option -- </option>
               <option>Undergraduate</option>
@@ -250,32 +250,32 @@
               <option>Staff</option>
               <option>Others</option>
             </select>
-          </fieldset class="pure-group">
-          <fieldset id=etn style="display:none;">
-            <label for="Entry no" data-aos="fade-up">Entry Number:</label>
+          </fieldset>
+          <fieldset class="pure-group" id=etn style="display:none;">
+            <label for="Entry no" data-aos="fade-up">Entry Number:</label><br>
             <input type="text" id="Entryno" name="Entryno" pattern="[A-Z0-9]{11}" data-aos="fade-up">
           </fieldset>
           <fieldset class="pure-group">
-            <label for="Contact" data-aos="fade-up">Contact Number:</label>
+            <label for="Contact" data-aos="fade-up">Contact Number:</label><br>
             <input type="text" id="Contact" name="Contact" pattern="[+0-9]{10,}" data-aos="fade-up" required>
           </fieldset>
           <fieldset class="pure-group">
-            <label for="Email" data-aos="fade-up">Personal Gmail:</label>
+            <label for="Email" data-aos="fade-up">Personal Gmail Id:</label><br>
             <input type="text" id="Email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               data-aos="fade-up" required>
           </fieldset>
 
-          <fieldset class="pure-group">
-            <label for="Email" data-aos="fade-up">IIT Email:</label>
+          <fieldset class="pure-group" id="Webm">
+            <label for="Email" data-aos="fade-up">Webmail:</label><br>
             <input type="text" id="IITEmail" name="IITEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               data-aos="fade-up" required>
           </fieldset>
 
           <fieldset class="pure-group">
-            <label for="Hostel">Hostel:</label>
+            <label for="Hostel" id="host">Hostel:</label><br>
             <input type="text" id="Hostel" name="Hostel" required>
           </fieldset>
-          <input class="formSub" type="Submit" value="Register!" id="sub">
+          <input class="formSub" type="Submit" value="Register" id="sub">
         </div>
       </form>
     </div>
@@ -284,15 +284,25 @@
   <!-- Form Script -->
   <script>
     document.getElementById('Programs').addEventListener('input', function () {
-      if (['Undergraduate', 'Postgraduate'].includes(document.getElementById('Programs').value)) {
+      let program=document.getElementById('Programs').value;
+      if (['Undergraduate', 'Postgraduate'].includes(program)) {
         let element = document.getElementById('etn');
         element.style = 'display:grid;';
         element.required = true;
+        document.getElementById('IITEmail').required=true;
+        document.getElementById('Webm').style='display:grid;';
+        document.getElementById('host').innerText="Hostel:";
       }
       else {
         let element = document.getElementById('etn');
         element.style = 'display:none;';
         element.required = false;
+        document.getElementById('host').innerText="Address:";
+        if (program=='Others'){
+          document.getElementById('IITEmail').required=false;
+          document.getElementById('Webm').style='display:none;';
+          
+        }
       }
     });
     function myf() {
