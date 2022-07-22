@@ -1,134 +1,461 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
 
 <head>
-    <title>Subscribe</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="index.css">
-    <title>Suscribe</title>
-    <!-- Reset styles -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/modern-css-reset/dist/reset.min.css" />
-    <link rel="shortcut-icon" href="NSS logo.png">
-    <!-- Google Fonts Muli -->
-    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    nav{padding-bottom:20px;}
+    nav button, img, li{
+      vertical-align: center;
+    }
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .achieveBtn {
+      position: relative;
+      display: table;
+      text-align: center;
+    }
+
+    .achieve {
+      width: 205px;
+      border-radius: 30px;
+      transition: 0.15s;
+      transition-timing-function: ease-in-out;
+    }
+
+    .achieve:hover {
+      /* opacity: 0.6; */
+      filter: brightness(50%) blur(2px);
+      transform: scale(1.1, 1.1);
+    }
+
+    .achieve_text {
+      display: none;
+      font-family: "Montserrat", sans-serif;
+      font-style: normal;
+      text-transform: uppercase;
+      position: absolute;
+      width: 205px;
+      height: 115.6px;
+      text-align: center;
+      top: 0px;
+      left: 0px;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 115.6px;
+      pointer-events: none;
+      color: white;
+    }
+
+    .achieve:hover+.achieve_text {
+      display: block !important;
+    }
+  </style>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NSS IIT Delhi</title>
+  <link rel="icon" href="images/nss.png">
+  <link rel="stylesheet" href="form.css">
+
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+  <!-- <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css"> -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:400,500,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="themify-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/Domains.css">
+
+  <!--  -->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <!-- <link rel="stylesheet" href="node_modules/mdbootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css">
+  <link rel="stylesheet" href="node_modules/mdbootstrap/css/style.css"> -->
+
+
+  <!--  -->
+  <!-- <link rel='shortcut icon' type='image/x-icon' href='./images/favicon.ico' />
+  <base href="/"> -->
+  <!-- <script src="./js/jquery.min.js"></script> -->
+  <script type="text/javascript" src="https://unpkg.com/smoothscroll-polyfill@0.4.3/dist/smoothscroll.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+    integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="css/css/bootstrap.min.css"> -->
 </head>
 
-<body>
-    <section class="wrapper">
-        <div class="container">
-            <div class="img__container" data-aos="fade-down">
-                <img src="NSS logo.png" alt="nsslogo" class="img">
+<body ng-app="app" ng-controller="MainCtrl">
+  <!-- <script type="text/javascript" src="./node_modules/mdbootstrap/js/jquery.min.js"></script>
+  <script type="text/javascript" src="./node_modules/mdbootstrap/js/popper.min.js"></script>
+  <script type="text/javascript" src="./node_modules/mdbootstrap/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./node_modules/mdbootstrap/js/mdb.min.js"></script> -->
+  <div class="loader-wrapper row center" ng-hide="loadingComp">
+    <div class="loading mx-auto"></div>
+  </div>
+  <nav class="row-nav">
+    <div layout="row" class="wrapper container">
+      <div flex-gt-sm="10" flex="100" class="logo-wrapper" layout="row" layout-align="start center"
+        layout-align-sm="center center" layout-align-xs="center center">
+        <i class="ti-menu" hide-gt-sm aria-hidden="true" ng-click="toggleLeft()"></i>
+        <a href="#!/">
+          <img class="nss-logo" src="./images/nss.png" height="55" width="auto" />
+        </a>
+      </div>
+      <div link rel="stylesheet" href="css/style.css" flex="100" layout="row" hide-sm hide-xs
+        layout-align="start center" class="nav-li-items" style="
+           padding-top: 20px;">
+        <ul class="dropmenu" hide-sm hide-xs>
+          <li><a href="#!/">Home</a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Volunteer</a>
+            <div class="dropdown-content">
+              <!-- <a class="sublink" href="#!/about_nss">About NSS IITD</a> -->
+              <a class="sublink" href="#!/domains/#top">Projects</a>
+              <a class="sublink" href="#!/involve_internship/#top">Internships</a>
+              <!-- <a class="sublink" href="http://nss.iitd.ac.in/winterIntern2018/all/">Winter Internship 2018</a> -->
+              <a class="sublink" href="#!/hours_policy">Hours Policy</a>
+              <!--<a class="sublink" ng-click="toggleLeft()" href="animalhelp.pdf">Animal Care Helplines</a>-->
+              <!-- <a class="sublink" href="https://docs.google.com/forms/d/e/1FAIpQLSda28YQCSUH0vdgb8hxD2xAklb-XDGlLsRpj4z3WQV6oRQQVw/viewform">PG Contribution</a> -->
             </div>
-            <form class="gform pure-form pure-form-stacked" method="POST" data-email="chopra.kavya04@gmail.com"
-                action="https://script.google.com/macros/s/AKfycby2597__TkjBVEjOm-Y3kQrvc_fAR9equkjyuppdQc_OPERvb1icF1mqOet9BXy4Jny/exec"
-                onsubmit="myf()">
-                <div class="content">
-                    <h2 class="subtitle" data-aos="fade-up">Register today</h2>
-                    <fieldset class="pure-group">
-                        <label for="Name" data-aos="fade-up">Name:</label>
-                        <input type="text" id="Name" name="Name" data-aos="fade-up" required>
-                    </fieldset>
-                    <fieldset class="pure-group">
-                        <label for="dropdown">Program:</label>
-                        <select id="Programs" name="Programs" required>
-                            <option disabled selected value> -- select an option -- </option>
-                            <option>Undergraduate</option>
-                            <option>Postgraduate</option>
-                            <option>Faculty</option>
-                            <option>Staff</option>
-                            <option>Others</option>
-                        </select>
-                    </fieldset class="pure-group">
-                    <fieldset id=etn style="display:none;">
-                        <label for="Entry no" data-aos="fade-up">Entry Number:</label>
-                        <input type="text" id="Entryno" name="Entryno" pattern="[A-Z0-9]{11}" data-aos="fade-up">
-                    </fieldset>
-                    <fieldset class="pure-group">
-                        <label for="Contact" data-aos="fade-up">Contact Number:</label>
-                        <input type="text" id="Contact" name="Contact" pattern="[+0-9]{10,}" data-aos="fade-up"
-                            required>
-                    </fieldset>
-                    <fieldset class="pure-group">
-                        <label for="Email" data-aos="fade-up">Personal Gmail:</label>
-                        <input type="text" id="Email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                            data-aos="fade-up" required>
-                    </fieldset>
+          </li>
+          <li><a href="https://www.kaizeniitd.in">Kaizen'22</a></li>
 
-                    <fieldset class="pure-group">
-                        <label for="Email" data-aos="fade-up">IIT Email:</label>
-                        <input type="text" id="IITEmail" name="IITEmail"
-                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" data-aos="fade-up" required>
-                    </fieldset>
+          <li><a href="#!/team_current/#top">Team</a></li>
+          <!--<li><a href="#section6">Connect</a></li>-->
+          <li>
+            <a id="Connect-button" href="#down">Connect</a>
 
-                    <fieldset class="pure-group">
-                        <label for="Hostel">Hostel:</label>
-                        <input type="text" id="Hostel" name="Hostel" required>
-                    </fieldset>
-                    <input type="Submit" value="Register!" id="sub">
-                </div>
-            </form>
+            <script>
+              $('#Connect-button').on('click', function (e) {
+                // prevent default anchor click behavior
+                e.preventDefault();
+
+                // store hash
+                var hash = this.hash;
+
+                if ($(hash).length) {
+                  $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                  }, 300, function () {
+                    // Do something fun if you want!
+                  });
+                }
+              });
+            </script>
+          </li>
+          <!-- <li><a href="pg_whatsapp_link">PG Students</a></li> -->
+
+          <li><a href="#!/faq/#top">FAQs</a></li>
+          <!--http://nss.iitd.ac.in/nsshrs/index.php/index.php           #!/check_hours-->
+          <!--<li><a href="#!/check_hours"" class="custom-link">Check Hours</a></li>-->
+          <li><a href="https://ngu.iitd.ac.in/nss/nss2" class="custom-link">Check Hours</a></li>
+          <li><a href="#!/hours_complaint" class="custom-link">Hours Complaint</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="4">
+    <div class="header" layout="column" layout-align="center center">
+      <a href="#!/"><img src="images/logo.png" style="height:100px"></a>
+      <i class="ti-close" aria-hidden="true" hide-gt-sm ng-click="toggleLeft()"></i>
+    </div>
+    <md-content layout-margin layout="row" layout-align="start start">
+      <ul class="dropmenu">
+        <li><a href="#!/">Home</a></li>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Volunteer</a>
+          <div class="dropdown-content">
+            <!-- <a class="sublink" href="#!/about_nss">About NSS IITD</a> -->
+            <a class="sublink" href="#!/domains/#top">Projects</a>
+            <a class="sublink" href="#!/involve_internship/#top">Internships</a>
+            <!-- <a class="sublink" href="http://nss.iitd.ac.in/winterIntern2018/all/">Winter Internship 2018</a> -->
+            <a class="sublink" href="#!/hours_policy">Hours Policy</a>
+            <!--<a class="sublink" ng-click="toggleLeft()" href="animalhelp.pdf">Animal Care Helplines</a>-->
+            <!-- <a class="sublink" href="https://docs.google.com/forms/d/e/1FAIpQLSda28YQCSUH0vdgb8hxD2xAklb-XDGlLsRpj4z3WQV6oRQQVw/viewform">PG Contribution</a> -->
+          </div>
+        </li>
+        <li><a href="https://www.kaizeniitd.in">Kaizen'22</a></li>
+
+        <li><a href="#!/team_current/#top">Team</a></li>
+        <!--<li><a href="#section6">Connect</a></li>-->
+        <li>
+          <a id="Connect-button" href="#down">Connect</a>
+
+          <script>
+            $('#Connect-button').on('click', function (e) {
+              // prevent default anchor click behavior
+              e.preventDefault();
+
+              // store hash
+              var hash = this.hash;
+
+              if ($(hash).length) {
+                $('html, body').animate({
+                  scrollTop: $(hash).offset().top
+                }, 300, function () {
+                  // Do something fun if you want!
+                });
+              }
+            });
+          </script>
+
+        </li>
+        <!-- <li><a href="pg_whatsapp_link">PG Students</a></li> -->
+
+        <li><a href="#!/faq/#top">FAQs</a></li>
+        <!--http://nss.iitd.ac.in/nsshrs/index.php/index.php           #!/check_hours-->
+        <!--<li><a href="#!/check_hours"" class="custom-link">Check Hours</a></li>-->
+        <li><a href="https://ngu.iitd.ac.in/nss/nss2" class="custom-link m-3">Check Hours</a></li>
+        <li><a href="#!/hours_complaint" class="custom-link m-3">Hours Complaint</a></li>
+      </ul>
+    </md-content>
+  </md-sidenav>
+  <div data-ng-view="" class="ngview" ng-class="{'main':isPath('/')}"></div>
+
+  <!-- form start -->
+  <section class="wrapper" id="formSec">
+    <div class="container formDiv">
+      <div class="img__container" data-aos="fade-down">
+        <img src="NSS logo.png" alt="nsslogo" class="img">
+      </div>
+      <form class="gform pure-form pure-form-stacked" method="POST" data-email="chopra.kavya04@gmail.com"
+        action="https://script.google.com/macros/s/AKfycby2597__TkjBVEjOm-Y3kQrvc_fAR9equkjyuppdQc_OPERvb1icF1mqOet9BXy4Jny/exec"
+        onsubmit="myf()">
+        <div class="content">
+          <h2 class="subtitle" data-aos="fade-up">Register today</h2>
+          <fieldset class="pure-group">
+            <label for="Name" data-aos="fade-up">Name:</label>
+            <input type="text" id="Name" name="Name" data-aos="fade-up" required>
+          </fieldset>
+          <fieldset class="pure-group">
+            <label for="dropdown">Program:</label>
+            <select id="Programs" name="Programs" required>
+              <option disabled selected value> -- select an option -- </option>
+              <option>Undergraduate</option>
+              <option>Postgraduate</option>
+              <option>Faculty</option>
+              <option>Staff</option>
+              <option>Others</option>
+            </select>
+          </fieldset class="pure-group">
+          <fieldset id=etn style="display:none;">
+            <label for="Entry no" data-aos="fade-up">Entry Number:</label>
+            <input type="text" id="Entryno" name="Entryno" pattern="[A-Z0-9]{11}" data-aos="fade-up">
+          </fieldset>
+          <fieldset class="pure-group">
+            <label for="Contact" data-aos="fade-up">Contact Number:</label>
+            <input type="text" id="Contact" name="Contact" pattern="[+0-9]{10,}" data-aos="fade-up" required>
+          </fieldset>
+          <fieldset class="pure-group">
+            <label for="Email" data-aos="fade-up">Personal Gmail:</label>
+            <input type="text" id="Email" name="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              data-aos="fade-up" required>
+          </fieldset>
+
+          <fieldset class="pure-group">
+            <label for="Email" data-aos="fade-up">IIT Email:</label>
+            <input type="text" id="IITEmail" name="IITEmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              data-aos="fade-up" required>
+          </fieldset>
+
+          <fieldset class="pure-group">
+            <label for="Hostel">Hostel:</label>
+            <input type="text" id="Hostel" name="Hostel" required>
+          </fieldset>
+          <input class="formSub" type="Submit" value="Register!" id="sub">
         </div>
-    </section>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        document.getElementById('Programs').addEventListener('input', function () {
-            if (['Undergraduate', 'Postgraduate'].includes(document.getElementById('Programs').value)) {
-                let element = document.getElementById('etn');
-                element.style = 'display:grid;';
-                element.required = true;
-            }
-            else {
-                let element = document.getElementById('etn');
-                element.style = 'display:none;';
-                element.required = false;
-            }
-        });
-        function myf() {
-            let prog = document.getElementById('Programs').value;
-            switch (prog) {
-                case 'Undergraduate':
-                    myf1();
-                    end()
-                    break;
-                case 'Postgraduate':
-                
-                    open("https://groups.google.com/u/3/g/nss_iitd_postgraduates");
-                    end()
-                    break;
-                default:
-                    open("https://groups.google.com/u/3/g/nss_iitd_faculty_staff");
-                    end()
-                    break;
-            }
-        }
-        function myf1() {
-            let s = document.getElementById('Entryno').value;
-            let year = s.slice(0, 4);
-            
-            if (year == '2020') {
-                open("https://groups.google.com/u/0/g/nss_iitd_2020/");
-            }
-            else if (year == '2021') {
-                open("https://groups.google.com/u/3/g/nss_iitd_2021");
-            }
-            else if (year == '2022') {
-                open("https://groups.google.com/u/3/g/nss_iitd_2022");
-            }
-            else if (year == '2019') {
-                open("https://groups.google.com/u/3/g/nss_iitd_2019");
-            }
-            else{
-                open("https://groups.google.com/u/3/g/nss_iitd_2018/")
-            }
-            end()
-        }
-        function end(){
-            setTimeout("window.close()",1000) 
-        }
-    </script>
-    <script>
-        AOS.init();
-    </script>
+      </form>
+    </div>
+  </section>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Form Script -->
+  <script>
+    document.getElementById('Programs').addEventListener('input', function () {
+      if (['Undergraduate', 'Postgraduate'].includes(document.getElementById('Programs').value)) {
+        let element = document.getElementById('etn');
+        element.style = 'display:grid;';
+        element.required = true;
+      }
+      else {
+        let element = document.getElementById('etn');
+        element.style = 'display:none;';
+        element.required = false;
+      }
+    });
+    function myf() {
+      let prog = document.getElementById('Programs').value;
+      switch (prog) {
+        case 'Undergraduate':
+          myf1();
+          end()
+          break;
+        case 'Postgraduate':
+
+          open("https://groups.google.com/u/3/g/nss_iitd_postgraduates");
+          end()
+          break;
+        default:
+          open("https://groups.google.com/u/3/g/nss_iitd_faculty_staff");
+          end()
+          break;
+      }
+    }
+    function myf1() {
+      let s = document.getElementById('Entryno').value;
+      let year = s.slice(0, 4);
+
+      if (year == '2020') {
+        open("https://groups.google.com/u/0/g/nss_iitd_2020/");
+      }
+      else if (year == '2021') {
+        open("https://groups.google.com/u/3/g/nss_iitd_2021");
+      }
+      else if (year == '2022') {
+        open("https://groups.google.com/u/3/g/nss_iitd_2022");
+      }
+      else if (year == '2019') {
+        open("https://groups.google.com/u/3/g/nss_iitd_2019");
+      }
+      else {
+        open("https://groups.google.com/u/3/g/nss_iitd_2018/")
+      }
+      end()
+    }
+    function end() {
+      setTimeout("window.close()", 1000)
+    }
+  </script>
+  <!-- form end  -->
+
+  <footer style="top:0;">
+    <div class="container" layout="column">
+      <div layout-gt-sm="row" layout="row" layout-margin layout-align-gt-sm="center start" layout-align="center center">
+        <div flex-gt-sm="40" flex="100" layout="column" layout-align-xs="center center">
+          <h4>We are social ;)</h4>
+          <ul>
+            <div layout="row" layout-align-xs="center center">
+              <li>
+                <a href="https://www.facebook.com/NSSIITDelhi/" target="_blank">
+                  <img src="images/icons/facebook.svg" height="40" width="40" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/channel/UC3nq2Tsw8eruu22-MBr2_ow" target="_blank">
+                  <img src="images/icons/youtube.svg" height="40" width="40" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/nssiitd/" target="_blank">
+                  <img src="images/icons/insta.png" height="35" width="35" />
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/NSS_IITD" target="_blank">
+                  <img src="images/icons/tweet.png" height="35" width="35" />
+                </a>
+              </li>
+              <li>
+                <a href="https://nssiitd.wordpress.com/" target="_blank">
+                  <img src="images/icons/wp.png" height="35" width="35" />
+                </a>
+                <a href=" https://in.linkedin.com/company/nss-iit-delhi" target="_blank">
+                  <img src="images/icons/link.png" height="35" width="35" />
+                </a>
+              </li>
+            </div>
+            <li>
+              Mails us
+              <a href="mailto:nssinbox@gmail.com">
+                nssinbox@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div flex-gt-sm="20" hide-sm hide-xs layout="column">
+          <h4>About Us</h4>
+          <ul>
+            <li>
+              <a href="#!/about_nss">About NSS IITD</a>
+            </li>
+            <li>
+              <a href="#!/about_domains">Domains</a>
+            </li>
+            <!--<li>
+                <a href="#!/about_collabs">Collaborations</a>
+              </li>-->
+            <li>
+              <a href="#!/faq/#top">FAQs</a>
+            </li>
+          </ul>
+        </div>
+        <div flex-gt-sm="20" hide-sm hide-xs layout="column">
+          <h4>Download</h4>
+          <ul>
+            <!-- <li>
+                <a href="#!/download_magazine">FullStop || Magazine 16-17</a>
+              </li> -->
+            <li>
+              <a href="#!/insight1718">Insight || Magazine 17-18</a>
+            </li>
+            <li>
+              <a href="http://nss.iitd.ac.in/constitution.pdf">NSS IITD Constitution</a>
+            </li>
+          </ul>
+        </div>
+        <div flex-gt-sm="20" hide-xs hide-sm flex="33" layout="column">
+          <h4>Others</h4>
+          <ul>
+            <li>
+              <a href="https://goo.gl/forms/bRy4N3WaSLr9VO1p2">Feedback</a>
+            </li>
+            <li>
+              <a href="#!/hours_complaint">Hours Complaints</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="last"> Copyright © 2022 NSS IITD All Rights Reserved.</p>
+      <p class="last" id="down"> Created by <a href="https://www.linkedin.com/in/rahul-parmar-iitd/"
+          target="_blank">ramrap<i class="blink">_</i></a>.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+
+  <script type='text/javascript' src="js/libs.min.js"></script>
+  <script type='text/javascript' src="js/nssiitd.js"></script>
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
 </body>
+
+</html>
