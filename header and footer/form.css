@@ -1,6 +1,5 @@
 #formSec{
     padding: 5rem 0 0 0;
-
     background: linear-gradient(120deg, #e671a5 0%, #ffcfa9 70%); 
 }
 .formDiv{
@@ -30,7 +29,7 @@ select, input{
 
 form{
   max-width:768px;
-  /* display: -ms-grid; */
+  display: -ms-grid;
   display: grid;
   place-items: center;
 }
@@ -54,6 +53,7 @@ form{
     place-items: center;
     padding: 0 2em;
     margin-bottom: 1.8em;
+    transform: scale(1.2,1.1);
   }
 
   .formSub{
