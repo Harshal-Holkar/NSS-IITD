@@ -1,36 +1,43 @@
 #formSec {
-  padding: 5rem 0 0 0;
+  display: flex;
+  height: auto;
+  padding: 6rem 2rem 2rem;
   background: linear-gradient(120deg, #e671a5 0%, #ffcfa9 70%);
 }
+
+/* .fcontainer{
+  margin: auto;
+} */
 
 .formDiv {
   display: grid;
   place-items: center;
-  max-width: 768px;
-  font-size: large;
+  /* max-width: 768px; */
+  /* font-size: medium; */
+  margin: auto;
 }
-
 select,
 input {
   border-radius: 1rem;
-  width: 100%;
-  padding: 10px;
-  margin: auto;
-  size:10px;
+  width: 60%;
+  padding: 8px;
+  /* size: 10px; */
 }
 
 fieldset {
   display: grid;
   place-items: center;
-  width:60vw;
+  width: 60vw;
+  height: 5rem;
 }
 
 @media only screen and (max-width: 768px) {
   fieldset {
-    max-width:768px;
+    max-width: 768px;
   }
 }
-.pure-group{
+
+.pure-group {
   border: 0px;
 }
 
@@ -65,7 +72,7 @@ select {
 }
 
 #sub {
-  width:50%;
+  width: 50%;
   color: white;
   background-color: #6c63ff;
   border: none;
