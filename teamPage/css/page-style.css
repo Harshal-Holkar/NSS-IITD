@@ -26,7 +26,17 @@ header {
     text-align: center;
 }
 
-
+.row{
+  align-items: center;
+  justify-content: center;
+}
+.heading{
+  text-align: center;
+  padding-bottom: 0%;
+  margin-bottom: 0px;
+  font-size: 3rem;
+  font-family: 'Roboto', 'Helvetica Neue', 'Arial';
+}
 h1, .h1 {
   font-size: 3.8em;
 }
