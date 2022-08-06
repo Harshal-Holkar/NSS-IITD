@@ -68,7 +68,7 @@ CARDS
 }
 
 .card .card-image {
-    height: 400px;
+    height: 300px;
     position: relative;
     overflow: hidden;
     margin-left: 15px;
@@ -87,8 +87,8 @@ CARDS
 
 .card .card-image .card-caption {
     position: absolute;
-    bottom: 15px;
-    left: 15px;
+    bottom: 10px;
+    left: 10px;
     color: #fff;
     font-size: 1.3em;
     text-shadow: 0 2px 5px rgba(33, 33, 33, 0.5);
