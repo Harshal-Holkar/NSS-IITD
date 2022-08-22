@@ -1,0 +1,963 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>Team 2022-23</title>
+    <!-- Google Font Roboto -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,400i,500,700" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
+    <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <!-- Page style -->
+    <link rel="stylesheet" href="css/page-style.css" type="text/css" />
+    <!-- Cards style -->
+    <link rel="stylesheet" href="css/cards-style.css" type="text/css" />
+    <!-- Modal -->
+    <link rel="stylesheet" href="css/modal.css" type="text/css">
+    <link rel="stylesheet"
+        href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+    <!-- <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:400,500,600,700" rel="stylesheet">
+    <link rel="icon" href="../images/nss.png">
+    <link rel="stylesheet" href="../themify-icons.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/Domains.css">
+
+    <!--  -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <!-- <link rel="stylesheet" href="node_modules/mdbootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css">
+  <link rel="stylesheet" href="node_modules/mdbootstrap/css/style.css"> -->
+
+
+    <!--  -->
+    <!-- <link rel='shortcut icon' type='image/x-icon' href='./images/favicon.ico' />
+  <base href="/"> -->
+    <!-- <script src="./js/jquery.min.js"></script> -->
+    <script type="text/javascript"
+        src="https://unpkg.com/smoothscroll-polyfill@0.4.3/dist/smoothscroll.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+        integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="css/css/bootstrap.min.css"> -->
+    <style>
+        .achieveBtn {
+            position: relative;
+            display: table;
+            text-align: center;
+        }
+
+        .achieve {
+            width: 205px;
+            border-radius: 30px;
+            transition: 0.15s;
+            transition-timing-function: ease-in-out;
+        }
+
+        .achieve:hover {
+            /* opacity: 0.6; */
+            filter: brightness(50%) blur(2px);
+            transform: scale(1.1, 1.1);
+        }
+
+        .achieve_text {
+            display: none;
+            font-family: "Montserrat", sans-serif;
+            font-style: normal;
+            text-transform: uppercase;
+            position: absolute;
+            width: 205px;
+            height: 115.6px;
+            text-align: center;
+            top: 0px;
+            left: 0px;
+            font-weight: 800;
+            font-size: 16px;
+            line-height: 115.6px;
+            pointer-events: none;
+            color: white;
+        }
+
+        .achieve:hover+.achieve_text {
+            display: block !important;
+        }
+    </style>
+</head>
+
+<body ng-app="app" ng-controller="MainCtrl">
+    <div class="loader-wrapper row center" ng-hide="loadingComp">
+        <div class="loading mx-auto"></div>
+    </div>
+    <nav class="row-nav">
+        <div layout="row" class="wrapper container">
+            <div flex-gt-sm="10" flex="100" class="logo-wrapper" layout="row" layout-align="start center"
+                layout-align-sm="center center" layout-align-xs="center center">
+                <i class="ti-menu" hide-gt-sm aria-hidden="true" ng-click="toggleLeft()"></i>
+                <a href="#!/">
+                    <img class="nss-logo" src="../images/nss.png" height="55" width="auto" />
+                </a>
+            </div>
+            <div link rel="stylesheet" href="../css/style.css" flex="100" layout="row" hide-sm hide-xs
+                layout-align="start center" class="nav-li-items" style="
+           padding-top: 20px;">
+                <ul class="dropmenu" hide-sm hide-xs>
+                    <li><a href="#!/">Home</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn">Volunteer</a>
+                        <div class="dropdown-content">
+                            <!-- <a class="sublink" href="#!/about_nss">About NSS IITD</a> -->
+                            <a class="sublink" href="#!/domains/#top">Projects</a>
+                            <a class="sublink" href="#!/involve_internship/#top">Internships</a>
+                            <!-- <a class="sublink" href="http://nss.iitd.ac.in/winterIntern2018/all/">Winter Internship 2018</a> -->
+                            <a class="sublink" href="#!/hours_policy">Hours Policy</a>
+                            <!--<a class="sublink" ng-click="toggleLeft()" href="animalhelp.pdf">Animal Care Helplines</a>-->
+                            <!-- <a class="sublink" href="https://docs.google.com/forms/d/e/1FAIpQLSda28YQCSUH0vdgb8hxD2xAklb-XDGlLsRpj4z3WQV6oRQQVw/viewform">PG Contribution</a> -->
+                        </div>
+                    </li>
+                    <li><a href="https://www.kaizeniitd.in">Kaizen'22</a></li>
+
+                    <li><a href="#!/team_current/#top">Team</a></li>
+                    <!--<li><a href="#section6">Connect</a></li>-->
+                    <li>
+                        <a id="Connect-button" href="#down">Connect</a>
+
+                        <script>
+                            $('#Connect-button').on('click', function (e) {
+                                // prevent default anchor click behavior
+                                e.preventDefault();
+
+                                // store hash
+                                var hash = this.hash;
+
+                                if ($(hash).length) {
+                                    $('html, body').animate({
+                                        scrollTop: $(hash).offset().top
+                                    }, 300, function () {
+                                        // Do something fun if you want!
+                                    });
+                                }
+                            });
+                        </script>
+                    </li>
+                    <!-- <li><a href="pg_whatsapp_link">PG Students</a></li> -->
+
+                    <li><a href="#!/faq/#top">FAQs</a></li>
+                    <!--http://nss.iitd.ac.in/nsshrs/index.php/index.php           #!/check_hours-->
+                    <!--<li><a href="#!/check_hours"" class="custom-link">Check Hours</a></li>-->
+                    <li><a href="https://ngu.iitd.ac.in/nss/nss2" class="custom-link">Check Hours</a></li>
+                    <li><a href="#!/hours_complaint" class="custom-link">Hours Complaint</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop md-whiteframe="4">
+        <div class="header" layout="column" layout-align="center center">
+            <a href="#!/"><img src="../images/logo.png" style="height:100px"></a>
+            <i class="ti-close" aria-hidden="true" hide-gt-sm ng-click="toggleLeft()"></i>
+        </div>
+        <md-content layout-margin layout="row" layout-align="start start">
+            <ul class="dropmenu">
+                <li><a href="#!/">Home</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Volunteer</a>
+                    <div class="dropdown-content">
+                        <!-- <a class="sublink" href="#!/about_nss">About NSS IITD</a> -->
+                        <a class="sublink" href="#!/domains/#top">Projects</a>
+                        <a class="sublink" href="#!/involve_internship/#top">Internships</a>
+                        <!-- <a class="sublink" href="http://nss.iitd.ac.in/winterIntern2018/all/">Winter Internship 2018</a> -->
+                        <a class="sublink" href="#!/hours_policy">Hours Policy</a>
+                        <!--<a class="sublink" ng-click="toggleLeft()" href="animalhelp.pdf">Animal Care Helplines</a>-->
+                        <!-- <a class="sublink" href="https://docs.google.com/forms/d/e/1FAIpQLSda28YQCSUH0vdgb8hxD2xAklb-XDGlLsRpj4z3WQV6oRQQVw/viewform">PG Contribution</a> -->
+                    </div>
+                </li>
+                <li><a href="https://www.kaizeniitd.in">Kaizen'22</a></li>
+
+                <li><a href="#!/team_current/#top">Team</a></li>
+                <!--<li><a href="#section6">Connect</a></li>-->
+                <li>
+                    <a id="Connect-button" href="#down">Connect</a>
+
+                    <script>
+                        $('#Connect-button').on('click', function (e) {
+                            // prevent default anchor click behavior
+                            e.preventDefault();
+
+                            // store hash
+                            var hash = this.hash;
+
+                            if ($(hash).length) {
+                                $('html, body').animate({
+                                    scrollTop: $(hash).offset().top
+                                }, 300, function () {
+                                    // Do something fun if you want!
+                                });
+                            }
+                        });
+                    </script>
+
+                </li>
+                <!-- <li><a href="pg_whatsapp_link">PG Students</a></li> -->
+
+                <li><a href="#!/faq/#top">FAQs</a></li>
+                <!--http://nss.iitd.ac.in/nsshrs/index.php/index.php           #!/check_hours-->
+                <!--<li><a href="#!/check_hours"" class="custom-link">Check Hours</a></li>-->
+                <li><a href="https://ngu.iitd.ac.in/nss/nss2" class="custom-link m-3">Check Hours</a></li>
+                <li><a href="#!/hours_complaint" class="custom-link m-3">Hours Complaint</a></li>
+            </ul>
+        </md-content>
+    </md-sidenav>
+    <div data-ng-view="" class="ngview" ng-class="{'main':isPath('/')}"></div>
+    <article class="col-md-12">
+        <div class="cards-7 section-gray">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="card card-profile">
+                            <div class="card-image">
+                                <img class="img" src="images/ankuram.jpeg"> </a>
+                            </div>
+                            <div class="table">
+                                <h4 class="card-caption">Project Ankuram</h4>
+                                <div class="ftr"><button id='ankuramBtn' class="btn btn-primary">Know More</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-profile">
+                            <div class="card-image">
+                                <img class="img" src="images/pahari_pathshala.jpg"> </a>
+                            </div>
+                            <div class="table">
+                                <h4 class="card-caption">Pahari Pathshala</h4>
+                                <div class="ftr"><button id='pahariBtn' class="btn btn-primary">Know More</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-profile">
+                            <div class="card-image">
+                                <img class="img" src="images/unnati.jpg"> </a>
+                            </div>
+                            <div class="table">
+                                <h4 class="card-caption">Project Unnati</h4>
+                                <div class="ftr"><button id='unnatiBtn' class="btn btn-primary">Know More</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-profile">
+                            <div class="card-image">
+                                <img class="img" src="images/viaan.jpg"> </a>
+                            </div>
+                            <div class="table">
+                                <h4 class="card-caption">Viaan</h4>
+                                <div class="ftr"><button id='viaanBtn' class="btn btn-primary">Know More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-profile">
+                            <div class="card-image">
+                                <img class="img" src="images/shecodes.jpg"> </a>
+                            </div>
+                            <div class="table">
+                                <h4 class="card-caption">SheCodes</h4>
+                                <div class="ftr"><button id='shecodesBtn' class="btn btn-primary">Know More</button></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card card-profile">
+                            <div class="card-image">
+                                <img class="img" src="../images/vidya_logo.jpeg"> </a>
+                            </div>
+                            <div class="table">
+                                <h4 class="card-caption">Vidya Teaching Project</h4>
+                                <div class="ftr"><button id='vidyaBtn' class="btn btn-primary">Know More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card card-profile">
+                            <div class="card-image">
+                                <img class="img" src="images/aarohan.jpg"> </a>
+                            </div>
+                            <div class="table">
+                                <h4 class="card-caption">Aarohan</h4>
+                                <div class="ftr"><button id='aarohanBtn' class="btn btn-primary">Know More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card card-profile">
+                            <div class="card-image">
+                                <img class="img" src="images/nab.jpg"> </a>
+                            </div>
+                            <div class="table">
+                                <h4 class="card-caption">NAB RK Puram</h4>
+                                <div class="ftr"><button id='nabBtn' class="btn btn-primary">Know More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>S
+                </div>
+            </div>
+            <!-- Modals -->
+            <div class="modals">
+                <div id="ankuramModal" class="modal">
+
+
+                    <div class="modal-content modal-body card card-profile">
+                        <span id="ankuramclose" class="close">&times;</span>
+                        <div class="card-image">
+                            <img class="img" src="images/ankuram.jpeg">
+                        </div>
+                        <div class="table">
+                            <h4 class="card-caption">Project Ankuram</h4>
+                            <h6 id="info" style="height: auto;" class="text-gray">Adult education, distinct from child education, is a practice in which adults engage in systematic and sustained self-educating activities in order to gain new forms of knowledge, skills, attitudes, or values. By implementing adult literacy programmes, this project intends to improve an individual's quality of life and enable him or her to realise his or her potential for self-realisation and elevate their level of living. The curriculum includes courses such as Speaking English, Computer and Technology, Gender Awareness, and others.
+                        </div>
+                        <div class="lightbox" id="lightbox">
+                            <div class="row">
+                              <div class="col-lg-4">
+                                <img src="https://mdbootstrap.com/img/Photos/Thumbnails/Slides/1.jpg"
+                                  data-mdb-img="https://mdbootstrap.com/img/Photos/Slides/1.jpg" alt="Lightbox image 1"
+                                  class="w-100" />
+                              </div>
+                              <div class="col-lg-4">
+                                <img src="https://mdbootstrap.com/img/Photos/Thumbnails/Slides/2.jpg"
+                                  data-mdb-img="https://mdbootstrap.com/img/Photos/Slides/2.jpg" alt="Lightbox image 2"
+                                  class="w-100" />
+                              </div>
+                              <div class="col-lg-4">
+                                <img src="https://mdbootstrap.com/img/Photos/Thumbnails/Slides/3.jpg"
+                                  data-mdb-img="https://mdbootstrap.com/img/Photos/Slides/3.jpg" alt="Lightbox image 3"
+                                  class="w-100" />
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pahariModal" class="modal">
+
+
+                    <div class="modal-content modal-body card card-profile">
+                        <span id="pahariclose" class="close">&times;</span>
+                        <div class="card-image">
+                            <img class="img" src="images/pahari.jpg">
+                        </div>
+                        <div class="table">
+                            <h4 class="card-caption">Pahari Pathshala</h4>
+                            <h6 id="info" style="height: auto;" class="text-gray">In this project, our main aim is to help students of Pahari village in Haryana. Volunteers teach Science & Maths to students of classes 11th - 12th for board examinations as well as competitive exams like JEE Mains & Advanced. Regular tests are also conducted at the end of each topic to check the understanding and learning of the students.</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="unnatiModal" class="modal">
+
+
+                    <div class="modal-content modal-body card card-profile">
+                        <span id="unnaticlose" class="close">&times;</span>
+                        <div class="card-image">
+                            <img class="img" src="images/unnati.jpg">
+                        </div>
+                        <div class="table">
+                            <h4 class="card-caption">Project Unnati</h4>
+                            <h6 id="info" style="height: auto;" class="text-gray">Unnati is an initiative which aims at providing quality education of the subjects Physics, Chemistry, and Mathematics to students of classes IX-X. We are currently in collaboration with Saraswati Seva Foundation, VIDYA NGO, as well as Edjustice NGO. We have already concluded a successful collaboration with the Udayan Care NGO as well, in which volunteers helped the students with their academics. We hope to continue helping our students enhance their knowledge, put them on the right path for their future and help them achieve new heights.</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="viaanModal" class="modal">
+
+
+                    <div class="modal-content modal-body card card-profile">
+                        <span id="viaanclose" class="close">&times;</span>
+                        <div class="card-image">
+                            <img class="img" src="images/viaan.jpg">
+                        </div>
+                        <div class="table">
+                            <h4 class="card-caption">Viaan</h4>
+                            <h6 id="info" style="height: auto;" class="text-gray">We aim to work towards the overall growth and development of underprivileged children. We try to inculcate moral education into these children as well as conduct extra-curricular activities for them. We are currently collaborating with Jan Sharnam NGO and Edjustice Foundation. We also regularly hold fun sessions with children of other NSS Teaching projects like VIDYA to bring together fun and learning through the means of storytelling, art and craft, music, drama and more!</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="shecodesModal" class="modal">
+
+
+                    <div class="modal-content modal-body card card-profile">
+                        <span id="shecodesclose" class="close">&times;</span>
+                        <div class="card-image">
+                            <img class="img" src="images/shecodes.jpg">
+                        </div>
+                        <div class="table">
+                            <h4 class="card-caption">SheCodes</h4>
+                            <h6 id="info" style="height: auto;" class="text-gray">In this Project we try to motivate girl students of 7th-8th class to take up the technology field and teach coding to those girls.and give them an idea about general coding and platforms like Scratch and Python. This project is being done in collaboration with the She Codes foundation and Delhi govt. This project combines the Education and Technology field and tries to bring it to the students.</h6>
+                        </div>
+                    </div>
+                </div>
+                <div id="vidyaModal" class="modal">
+
+
+                    <div class="modal-content modal-body card card-profile">
+                        <span id="vidyaclose" class="close">&times;</span>
+                        <div class="card-image">
+                            <img class="img" src="../images/vidya_logo.jpeg" style="object-fit: cover;">
+                        </div>
+                        <div class="table">
+                            <h4 class="card-caption">Vidya</h4>
+                            <h5>Vision</h5>
+                            <h6 id="info" style="height: auto;" class="text-gray">Our prime focus at VIDYA is to teach students from classes 4th to 12th (and even some college students and adults) and inculcate the fundamental concepts of all subjects, especially Mathematics and Science. We make assignments, host fun activities and take regular assessment exams all the while holding regular teaching 5-6 days a week. Through our efforts, we have hosted several extra-curricular activities and conducted classes for the students with impeccable regularity. We wish to bring about a change in the lives of our students by empowering them through quality education and overall development.</h6>
+                            <h5>Description</h5>
+                            <h6 id="info" style="height: auto;" class="text-gray">VIDYA Teaching Project is a collaboration with VIDYA NGO where a team of dedicated volunteers takes regular classes, teaching students of classes 4-12 especially Science and Mathematics at Kendriya Vidyalaya School on the IIT Delhi Campus. Classes are held from 3-5 pm on weekdays for the students. We make assignments, host fun activities, and take regular assessment exams while holding regular teaching 6 days a week. </h6></div>
+                        <div class="lightbox" id="lightbox">
+                            <div class="row">
+                              <div class="col-lg-4">
+                                <img src="../images/vidya1.png"
+                                  data-mdb-img="../images/vidya1.png" alt="Lightbox image 1"
+                                  class="w-100" />
+                              </div>
+                              <div class="col-lg-4">
+                                <img src="../images/vidya2.png"
+                                  data-mdb-img="../images/vidya2.png" alt="Lightbox image 2"
+                                  class="w-100" />
+                              </div>
+                              <div class="col-lg-4">
+                                <img src="../images/vidya3.png"
+                                  data-mdb-img="../images/vidya3.png" alt="Lightbox image 3"
+                                  class="w-100" />
+                              </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="aarohanModal" class="modal">
+
+
+                    <div class="modal-content modal-body card card-profile">
+                        <span id="aarohanclose" class="close">&times;</span>
+                        <div class="card-image">
+                            <img class="img" src="images/aarohan.jpg">
+                        </div>
+                        <div class="table">
+                            <h4 class="card-caption">Aarohan</h4>
+                            <h6 id="info" style="height: auto;" class="text-gray">Aarohan aims to provide free and quality education to the students of class 11th and 12th to help them prepare for examinations like JEE Mains & Advanced. We primarily focus on economically weaker sections of society. The competition to get into IITs and NITs has increased a lot, and it has become challenging to crack these exams without coaching and the proper guidance. We are currently in collaboration with NGOs like Saraswati Sewa Foundation (SSF), Edjustice, and VIDYA, who help us reach out to our beneficiaries.
+                            </h6>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="nabModal" class="modal">
+
+
+                    <div class="modal-content modal-body card card-profile">
+                        <span id="nabclose" class="close">&times;</span>
+                        <div class="card-image">
+                            <img class="img" src="images/nab.jpg">
+                        </div>
+                        <div class="table">
+                            <h4 class="card-caption">NAB RK Puram</h4>
+                            <h5 class="category text-gray">Team Mentor</h5>
+                            <h6 id="info" style="height: auto;" class="text-gray">As truly said, "Hope is being able to see that there is light despite all the darkness. " Believing in the same, this project works for the upliftment of the visually impaired kids from NAB RK Puram. There is a well-known saying that, a teacher can change life with just the right mix of chalk and challenges. Our main focus here is to educate them so that they can stand on their own feet. We teach them different subjects like Science, Maths, English, Computer, etc. through one-on-one classes with the volunteers. We also try to help prepare their schedule of academic syllabus and provide mentoring for future opportunities. Also, providing scribes for various exams of visually impaired people is a very important part of this project.</h6>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <script>
+                var modalankuram = document.getElementById("ankuramModal");
+                var btnankuram = document.getElementById("ankuramBtn");
+                var spanankuram = document.getElementById("ankuramclose");
+                btnankuram.onclick = function () {
+                    modalankuram.style.display = "block";
+                }
+                spanankuram.onclick = function () {
+                    modalankuram.style.display = "none";
+                }
+            </script>
+
+            <script>
+                var modalpahari = document.getElementById("pahariModal");
+                var btnpahari = document.getElementById("pahariBtn");
+                var spanpahari = document.getElementById("pahariclose");
+                btnpahari.onclick = function () {
+                    modalpahari.style.display = "block";
+                }
+                spanpahari.onclick = function () {
+                    modalpahari.style.display = "none";
+                }
+            </script>
+
+            <script>
+                var modalunnati = document.getElementById("unnatiModal");
+                var btnunnati = document.getElementById("unnatiBtn");
+                var spanunnati = document.getElementById("unnaticlose");
+                btnunnati.onclick = function () {
+                    modalunnati.style.display = "block";
+                }
+                spanunnati.onclick = function () {
+                    modalunnati.style.display = "none";
+                }
+            </script>
+
+            <script>
+                var modalviaan = document.getElementById("viaanModal");
+                var btnviaan = document.getElementById("viaanBtn");
+                var spanviaan = document.getElementById("viaanclose");
+                btnviaan.onclick = function () {
+                    modalviaan.style.display = "block";
+                }
+                spanviaan.onclick = function () {
+                    modalviaan.style.display = "none";
+                }
+            </script>
+
+            <script>
+                var modalshecodes = document.getElementById("shecodesModal");
+                var btnshecodes = document.getElementById("shecodesBtn");
+                var spanshecodes = document.getElementById("shecodesclose");
+                btnshecodes.onclick = function () {
+                    modalshecodes.style.display = "block";
+                }
+                spanshecodes.onclick = function () {
+                    modalshecodes.style.display = "none";
+                }
+            </script>
+            <script>
+                var modalvidya = document.getElementById("vidyaModal");
+                var btnvidya = document.getElementById("vidyaBtn");
+                var spanvidya = document.getElementById("vidyaclose");
+                btnvidya.onclick = function () {
+                    modalvidya.style.display = "block";
+                }
+                spanvidya.onclick = function () {
+                    modalvidya.style.display = "none";
+                }
+            </script>
+
+            <script>
+                var modalaarohan = document.getElementById("aarohanModal");
+                var btnaarohan = document.getElementById("aarohanBtn");
+                var spanaarohan = document.getElementById("aarohanclose");
+                btnaarohan.onclick = function () {
+                    modalaarohan.style.display = "block";
+                }
+                spanaarohan.onclick = function () {
+                    modalaarohan.style.display = "none";
+                }
+            </script>
+
+            <script>
+                var modalnab = document.getElementById("nabModal");
+                var btnnab = document.getElementById("nabBtn");
+                var spannab = document.getElementById("nabclose");
+                btnnab.onclick = function () {
+                    modalnab.style.display = "block";
+                }
+                spannab.onclick = function () {
+                    modalnab.style.display = "none";
+                }
+            </script>
+
+                </div>
+            </div>
+            <div id="vidyaModal" class="modal">
+                <span id="vidyaclose" class="close">&times;</span>
+
+                <div class="modal-content modal-body card card-profile">
+                    <div class="card-image">
+                        <img class="img" src="images/vidya.jpg">
+                    </div>
+                    <div class="table">
+                        <h4 class="card-caption">vidya Aggarwal</h4>
+                        <h5 class="category text-gray">Team Mentor</h5>
+                        <h6 id="info" style="height: auto;" class="text-gray">Obnoxious and
+                            extravagant. Oh and
+                            I'm also a pathological liar and borderline delusional so believe me
+                            when i say that
+                            I'm very hot :). Wanna talk about Pop music and Taylor Swift, Gimme a
+                            call at any
+                            time of the day. Still haven't grown out of my teen fiction years, so
+                            Percy Jackson
+                            <3. I love to gossip and hangout too, that's my day job. Also I'm in campus for a year, so
+                                let's have fun 🙈</h6>
+                                <div class="ftr">
+                                    <a href="vidyaaggarwal99@gmail.com" class="btn btn-just-icon btn-google btn-round">
+                                        <i class="fa fa-envelope"></i>
+                                    </a>
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script>
+            var modal = document.getElementById("myModal");
+            var btn = document.getElementById("myBtn");
+            var span = document.getElementsByClassName("close")[0];
+            btn.onclick = function () {
+                modal.style.display = "block";
+            }
+
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+        </script>
+        <script>
+            var modalvidya = document.getElementById("vidyaModal");
+            var btnvidya = document.getElementById("vidyaBtn");
+            var spanvidya = document.getElementById("vidyaclose");
+            btnvidya.onclick = function () {
+                modalvidya.style.display = "block";
+            }
+            spanvidya.onclick = function () {
+                modalvidya.style.display = "none";
+            }
+        </script>
+
+
+    </article>
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <footer style="top:0;">
+        <div class="container" layout="column">
+            <div layout-gt-sm="row" layout="row" layout-margin layout-align-gt-sm="center start"
+                layout-align="center center">
+                <div flex-gt-sm="40" flex="100" layout="column" layout-align-xs="center center">
+                    <h4>We are social ;)</h4>
+                    <ul>
+                        <div layout="row" layout-align-xs="center center">
+                            <li>
+                                <a href="https://www.facebook.com/NSSIITDelhi/" target="_blank">
+                                    <img src="../images/icons/facebook.svg" height="40" width="40" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/channel/UC3nq2Tsw8eruu22-MBr2_ow" target="_blank">
+                                    <img src="../images/icons/youtube.svg" height="40" width="40" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/nssiitd/" target="_blank">
+                                    <img src="../images/icons/insta.png" height="35" width="35" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/NSS_IITD" target="_blank">
+                                    <img src="../images/icons/tweet.png" height="35" width="35" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://nssiitd.wordpress.com/" target="_blank">
+                                    <img src="../images/icons/wp.png" height="35" width="35" />
+                                </a>
+                                <a href=" https://in.linkedin.com/company/nss-iit-delhi" target="_blank">
+                                    <img src="../images/icons/link.png" height="35" width="35" />
+                                </a>
+                            </li>
+                        </div>
+                        <li>
+                            Mails us
+                            <a href="mailto:nssinbox@gmail.com">
+                                nssinbox@gmail.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div flex-gt-sm="20" hide-sm hide-xs layout="column">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li>
+                            <a href="#!/about_nss">About NSS IITD</a>
+                        </li>
+                        <li>
+                            <a href="#!/about_domains">Domains</a>
+                        </li>
+                        <!--<li>
+                <a href="#!/about_collabs">Collaborations</a>
+              </li>-->
+                        <li>
+                            <a href="#!/faq/#top">FAQs</a>
+                        </li>
+                    </ul>
+                </div>
+                <div flex-gt-sm="20" hide-sm hide-xs layout="column">
+                    <h4>Download</h4>
+                    <ul>
+                        <!-- <li>
+                <a href="#!/download_magazine">FullStop || Magazine 16-17</a>
+              </li> -->
+                        <li>
+                            <a href="#!/insight1718">Insight || Magazine 17-18</a>
+                        </li>
+                        <li>
+                            <a href="http://nss.iitd.ac.in/constitution.pdf">NSS IITD Constitution</a>
+                        </li>
+                    </ul>
+                </div>
+                <div flex-gt-sm="20" hide-xs hide-sm flex="33" layout="column">
+                    <h4>Others</h4>
+                    <ul>
+                        <li>
+                            <a href="https://goo.gl/forms/bRy4N3WaSLr9VO1p2">Feedback</a>
+                        </li>
+                        <li>
+                            <a href="#!/hours_complaint">Hours Complaints</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="last"> Copyright © 2022 NSS IITD All Rights Reserved.</p>
+            <p class="last" id="down"> Created by <a href="https://www.linkedin.com/in/rahul-parmar-iitd/"
+                    target="_blank">ramrap<i class="blink">_</i></a>.</p>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        window.onclick = function (event) {
+            if (event.target == modalvidya) {
+                modalvidya.style.display = "none";
+            }
+            else if (event.target == modalaarohan) {
+                modalaarohan.style.display = "none";
+            }
+            else if (event.target == modalnab) {
+                modalnab.style.display = "none";
+            }
+
+            else if (event.target == modal2019BB10022) {
+                modal2019BB10022.style.display = "none";
+            }
+
+            else if (event.target == modal2019CE10245) {
+                modal2019CE10245.style.display = "none";
+            }
+
+            else if (event.target == modal2019CH70177) {
+                modal2019CH70177.style.display = "none";
+            }
+
+            else if (event.target == modal2020CE10211) {
+                modal2020CE10211.style.display = "none";
+            }
+
+            else if (event.target == modal2020CS10321) {
+                modal2020CS10321.style.display = "none";
+            }
+
+            else if (event.target == modal2020ME21196) {
+                modal2020ME21196.style.display = "none";
+            }
+
+            else if (event.target == modal2020MS10745) {
+                modal2020MS10745.style.display = "none";
+            }
+
+            else if (event.target == modal2020BB10023) {
+                modal2020BB10023.style.display = "none";
+            }
+
+            else if (event.target == modal2020MT60886) {
+                modal2020MT60886.style.display = "none";
+            }
+
+            else if (event.target == modal2020CH10119) {
+                modal2020CH10119.style.display = "none";
+            }
+
+            else if (event.target == modal2020TT11113) {
+                modal2020TT11113.style.display = "none";
+            }
+
+            else if (event.target == modal2020BB10059) {
+                modal2020BB10059.style.display = "none";
+            }
+
+            else if (event.target == modal2020BB10061) {
+                modal2020BB10061.style.display = "none";
+            }
+
+            else if (event.target == modal2021EE10134) {
+                modal2021EE10134.style.display = "none";
+            }
+
+            else if (event.target == modal2020TT11117) {
+                modal2020TT11117.style.display = "none";
+            }
+
+            else if (event.target == modal2021CS10081) {
+                modal2021CS10081.style.display = "none";
+            }
+
+            else if (event.target == modal2021MT10251) {
+                modal2021MT10251.style.display = "none";
+            }
+
+            else if (event.target == modal2021MT10254) {
+                modal2021MT10254.style.display = "none";
+            }
+
+            else if (event.target == modal2021CH10371) {
+                modal2021CH10371.style.display = "none";
+            }
+
+            else if (event.target == modal2020CS50475) {
+                modal2020CS50475.style.display = "none";
+            }
+
+            else if (event.target == modal2021BB10356) {
+                modal2021BB10356.style.display = "none";
+            }
+
+            else if (event.target == modal2020CE10241) {
+                modal2020CE10241.style.display = "none";
+            }
+
+            else if (event.target == modal2021ES10768) {
+                modal2021ES10768.style.display = "none";
+            }
+
+            else if (event.target == modal2021MS10880) {
+                modal2021MS10880.style.display = "none";
+            }
+
+            else if (event.target == modal2020EE10499) {
+                modal2020EE10499.style.display = "none";
+            }
+
+            else if (event.target == modal2021CH70462) {
+                modal2021CH70462.style.display = "none";
+            }
+
+            else if (event.target == modal2021CH10418) {
+                modal2021CH10418.style.display = "none";
+            }
+
+            else if (event.target == modal2020bb10025) {
+                modal2020bb10025.style.display = "none";
+            }
+
+            else if (event.target == modal2021EE10653) {
+                modal2021EE10653.style.display = "none";
+            }
+
+            else if (event.target == modal2021ES10767) {
+                modal2021ES10767.style.display = "none";
+            }
+
+            else if (event.target == modal2021CH10381) {
+                modal2021CH10381.style.display = "none";
+            }
+
+            else if (event.target == modal2021MT60949) {
+                modal2021MT60949.style.display = "none";
+            }
+
+            else if (event.target == modal2021MT10904) {
+                modal2021MT10904.style.display = "none";
+            }
+
+            else if (event.target == modal2021ME21054) {
+                modal2021ME21054.style.display = "none";
+            }
+
+            else if (event.target == modal2021PH10825) {
+                modal2021PH10825.style.display = "none";
+            }
+
+            else if (event.target == modal2021BB10331) {
+                modal2021BB10331.style.display = "none";
+            }
+
+            else if (event.target == modal2021ME21223) {
+                modal2021ME21223.style.display = "none";
+            }
+
+            else if (event.target == modal2021CH70027) {
+                modal2021CH70027.style.display = "none";
+            }
+
+            else if (event.target == modal2021ES10188) {
+                modal2021ES10188.style.display = "none";
+            }
+
+            else if (event.target == modal2018CHZ8486) {
+                modal2018CHZ8486.style.display = "none";
+            }
+
+            else if (event.target == modal2021MAS7106) {
+                modal2021MAS7106.style.display = "none";
+            }
+
+            else if (event.target == modal2021MSM2487) {
+                modal2021MSM2487.style.display = "none";
+            }
+
+            else if (event.target == modal2021ESN2883) {
+                modal2021ESN2883.style.display = "none";
+            }
+            else if (event.target == modalsamrat) {
+                modalsamrat.style.display = "none";
+            }
+
+            else if (event.target == modalnaveen) {
+                modalnaveen.style.display = "none";
+            }
+
+            else if (event.target == modalunnati) {
+                modalunnati.style.display = "none";
+            }
+
+            else if (event.target == modalviaan) {
+                modalviaan.style.display = "none";
+            }
+
+            else if (event.target == modalshecodes) {
+                modalshecodes.style.display = "none";
+            }
+
+        }
+    </script>
+    <!-- Bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <script type='text/javascript' src="../js/libs.min.js"></script>
+    <script type='text/javascript' src="../js/nssiitd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Angular Material requires Angular.js Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+</body>
+
+</html>
