@@ -4,7 +4,37 @@
 .table
 {
     font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
 }
+.left{
+    text-align: right;
+    justify-content: right;
+    align-items: right;
+}
+.right{
+    text-align: left;
+    justify-content: left;
+    align-items: left;
+}
+.carousel{
+    height: max-content;
+}
+img
+{
+   width: 50%;
+   margin: auto;
+}
+.carousel .carousel-item {
+    height: 30rem;
+    justify-content: center
+
+}
+
+  .carousel-item img {
+      position: absolute;
+      object-fit: cover;
+      min-height: 30rem;
+  }
 /* The Modal (background) */
         .modal {
           display: none;
