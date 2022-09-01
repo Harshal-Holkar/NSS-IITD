@@ -30,6 +30,11 @@ img
 
 }
 
+#imagesModal{
+    width: 200px;
+    height: 100px;
+}
+
 #whatTextDomains{
     text-align: left;
 }
