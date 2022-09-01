@@ -30,6 +30,10 @@ img
 
 }
 
+#whatTextDomains{
+    text-align: left;
+}
+
   .carousel-item img {
       position: absolute;
       object-fit: cover;
