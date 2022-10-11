@@ -2,251 +2,319 @@
 <html>
 
 <head>
-    <style>
-html, body {
-  margin: 2% 0 0 0;
-  padding: 0;
-  font-family: Helvetica, sans-serif;
-}
-body {
-    background: #f4f6fa;
-}
-section#timeline {
-  width: 80%;
-  margin: 20px auto;
-  position: relative;
-}
-section#timeline:before {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  margin: 0 0 0 -1px;
-  width: 0.2%;
-  height: 100%;
-  /* background: rgba(255,255,255,0.2); */
-  background: rgba(0,0,0,.1);
-}
-section#timeline article {
-  width: 100%;
-  margin: 0 0 20px 0;
-  position: relative;
-}
-section#timeline article:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-section#timeline article div.inner {
-  width: 40%;
-  float: left;
-  margin: 5px 0 0 0;
-  border-radius: 6px;
-}
-section#timeline article div.inner span.date {
-  display: block;
-  width: auto;
-  height: auto;
-  padding: 5px 0;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  margin: 0 0 0 -32px;
-  border-radius: 100%;
-  font-size: 12px;
-  font-weight: 900;
-  text-transform: uppercase;
-  /* background: #25303B; */
-  background: #f4f6fa;
-  color: #36434d;
-  /* color: rgba(255,255,255,0.5); */
-  border: 2px solid rgba(255,255,255,0.2);
-  box-shadow: 0 0 0 7px #f4f6fa;
-  /* box-shadow: 0 0 0 7px #25303B; */
-}
-section#timeline article div.inner span.date span {
-  display: block;
-  text-align: center;
-}
-section#timeline article div.inner span.date span.day {
-  font-size: 10px;
-}
-section#timeline article div.inner span.date span.month {
-  font-size: 16px;
-}
-section#timeline article div.inner span.date span.year {
-  font-size: 10px;
-}
-section#timeline article div.inner h2 {
-  padding: 15px;
-  margin: 0;
-  color: #fff;
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  border-radius: 6px 6px 0 0;
-  position: relative;
-}
-section#timeline article div.inner h2:after {
-  content: '';
-  position: absolute;
-  top: 20px;
-  right: -5px;
-  	width: 10px; 
-	  height: 10px;
-  -webkit-transform: rotate(-45deg);
-}
-section#timeline article div.inner p {
-  padding: 15px;
-  margin: 0;
-  font-size: 14px;
-  background: #fff;
-  color: #656565;
-  border-radius: 0 0 6px 6px;
-}
-section#timeline article:nth-child(2n+2) div.inner {
-  float: right;
-}
-section#timeline article:nth-child(2n+2) div.inner h2:after {
-  left: -5px;
-}
-section#timeline article:nth-child(1) div.inner h2 {
-  background: #e74c3c;
-}
-section#timeline article:nth-child(1) div.inner h2:after {
-  background: #e74c3c;
-}
-section#timeline article:nth-child(2) div.inner h2 {
-  background: #2ecc71;
-}
-section#timeline article:nth-child(2) div.inner h2:after {
-  background: #2ecc71;
-}
-section#timeline article:nth-child(3) div.inner h2 {
-  background: #e67e22;
-}
-section#timeline article:nth-child(3) div.inner h2:after {
-  background: #e67e22;
-}
-section#timeline article:nth-child(4) div.inner h2 {
-  background: #1abc9c;
-}
-section#timeline article:nth-child(4) div.inner h2:after {
-  background: #1abc9c;
-}
-section#timeline article:nth-child(5) div.inner h2 {
-  background: #9b59b6;
-}
-section#timeline article:nth-child(5) div.inner h2:after {
-  background: #9b59b6;
-}
-section#timeline article:nth-child(7) div.inner h2 {
-  background: #2ecc71;
-}
-section#timeline article:nth-child(7) div.inner h2:after {
-  background: #2ecc71;
-}
-section#timeline article:nth-child(8) div.inner h2 {
-  background: #e67e22;
-}
-section#timeline article:nth-child(8) div.inner h2:after {
-  background: #e67e22;
-}
-section#timeline article:nth-child(6) div.inner h2 {
-  background: #e74c3c;
-}
-section#timeline article:nth-child(6) div.inner h2:after {
-  background: #e74c3c;
-}
-    </style>
+  <style>
+    html,
+    body {
+      margin: 2% 0 0 0;
+      padding: 0;
+      font-family: Helvetica, sans-serif;
+    }
+
+    body {
+      background: #acadae;
+    }
+
+    section#timeline {
+      width: 80%;
+      margin: 20px auto;
+      position: relative;
+    }
+
+    section#timeline:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 0;
+      margin: 0 0 0 -1px;
+      width: 0.2%;
+      height: 100%;
+      /* background: rgba(255,255,255,0.2); */
+      background: rgba(0, 0, 0, .1);
+    }
+
+    section#timeline article {
+      width: 100%;
+      margin: 0 0 20px 0;
+      position: relative;
+    }
+
+    section#timeline article:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    section#timeline article div.inner {
+      width: 40%;
+      float: left;
+      margin: 5px 0 0 0;
+      border-radius: 6px;
+    }
+
+    section#timeline article div.inner span.date {
+      display: block;
+      width: auto;
+      height: auto;
+      padding: 5px 0;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin: 0 0 0 -32px;
+      border-radius: 100%;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      /* background: #25303B; */
+      background: #f4f6fa;
+      color: #36434d;
+      /* color: rgba(255,255,255,0.5); */
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 0 7px #f4f6fa;
+      /* box-shadow: 0 0 0 7px #25303B; */
+    }
+
+    section#timeline article div.inner span.date span {
+      display: block;
+      text-align: center;
+    }
+
+    section#timeline article div.inner span.date span.day {
+      font-size: 10px;
+    }
+
+    section#timeline article div.inner span.date span.month {
+      font-size: 16px;
+    }
+
+    section#timeline article div.inner span.date span.year {
+      font-size: 10px;
+    }
+
+    section#timeline article div.inner h2 {
+      padding: 15px;
+      margin: 0;
+      color: #fff;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      border-radius: 6px 6px 0 0;
+      position: relative;
+    }
+
+    section#timeline article div.inner h2:after {
+      content: '';
+      position: absolute;
+      top: 20px;
+      right: -5px;
+      width: 10px;
+      height: 10px;
+      -webkit-transform: rotate(-45deg);
+    }
+
+    section#timeline article div.inner div.cont {
+      border-radius: 6px;
+      transition: box-shadow 0.5s, transform 0.5s;
+
+    }
+
+    section#timeline article div.inner div.cont:hover {
+      z-index: 2;
+      box-shadow: 8px 12px 8px rgba(0, 0, 0, 0.14), 6px 13px 8px rgba(0, 0, 0, 0.2), 4px 11px 8px rgba(0, 0, 0, 0.12);
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+
+    section#timeline article div.inner p {
+      content:'';
+      padding: 15px;
+      margin: 0;
+      padding-top: 56.25%;
+      background: #fff;
+      color: #656565;
+      border-radius: 0 0 6px 6px;
+    }
+
+    section#timeline article:nth-child(2n+2) div.inner {
+      float: right;
+    }
+
+    section#timeline article:nth-child(2n+2) div.inner h2:after {
+      left: -5px;
+    }
+
+    section#timeline article:nth-child(1) div.inner h2 {
+      background: #e74c3c;
+    }
+
+    section#timeline article:nth-child(1) div.inner h2:after {
+      background: #e74c3c;
+    }
+
+    section#timeline article:nth-child(2) div.inner h2 {
+      background: #2ecc71;
+    }
+
+    section#timeline article:nth-child(2) div.inner h2:after {
+      background: #2ecc71;
+    }
+
+    section#timeline article:nth-child(3) div.inner h2 {
+      background: #e67e22;
+    }
+
+    section#timeline article:nth-child(3) div.inner h2:after {
+      background: #e67e22;
+    }
+
+    section#timeline article:nth-child(4) div.inner h2 {
+      background: #1abc9c;
+    }
+
+    section#timeline article:nth-child(4) div.inner h2:after {
+      background: #1abc9c;
+    }
+
+    section#timeline article:nth-child(5) div.inner h2 {
+      background: #9b59b6;
+    }
+
+    section#timeline article:nth-child(5) div.inner h2:after {
+      background: #9b59b6;
+    }
+
+    section#timeline article:nth-child(7) div.inner h2 {
+      background: #2ecc71;
+    }
+
+    section#timeline article:nth-child(7) div.inner h2:after {
+      background: #2ecc71;
+    }
+
+    section#timeline article:nth-child(8) div.inner h2 {
+      background: #e67e22;
+    }
+
+    section#timeline article:nth-child(8) div.inner h2:after {
+      background: #e67e22;
+    }
+
+    section#timeline article:nth-child(6) div.inner h2 {
+      background: #e74c3c;
+    }
+
+    section#timeline article:nth-child(6) div.inner h2:after {
+      background: #e74c3c;
+    }
+  </style>
 </head>
 
 <body>
-    <section id="timeline">
-        <article>
-          <div class="inner">
-            <span class="date">
-              <!-- <span class="day">30<sup>th</sup></span> -->
-              <span class="day">Team</span>
-              <span class="month">2022-23</span>
-              <!-- <span class="year">23</span> -->
-            </span>
-            <h2>The Title</h2>
-            <p><br></p>
+  <section id="timeline">
+    <article>
+      <div class="inner">
+        <span class="date">
+          <!-- <span class="day">30<sup>th</sup></span> -->
+          <span class="day">Team</span>
+          <span class="month">2022-23</span>
+          <!-- <span class="year">23</span> -->
+        </span>
+        <div class="cont">
+          <h2>It is only by doing good to others that one does good to oneself.</h2>
+          <p></p>
+        </div>
+      </div>
+      </div>
+    </article>
+    <article>
+      <div class="inner">
+        <span class="date">
+          <span class="day">Team</span>
+          <span class="month">2021-22</span>
+        </span>
+        <div class="cont">
+          <h2>Speak up if you want to bring change to the world.</h2>
+          <p></p>
+        </div>
+      </div>
+      </div>
+    </article>
+    <article>
+      <div class="inner">
+        <span class="date">
+          <span class="day">Team</span>
+          <span class="month">2020-21</span>
+        </span>
+        <div class="cont">
+          <div class="cont">
+            <h2>Not all of us can do great things, but we can do small things with great love.</h2>
+            <p></p>
           </div>
-        </article>
-        <article>
-          <div class="inner">
-            <span class="date">
-                <span class="day">Team</span>
-                <span class="month">2021-22</span>
-            </span>
-            <h2>The Title</h2>
-            <p><br></p>
-          </div>
-        </article>
-        <article>
-          <div class="inner">
-            <span class="date">
-                <span class="day">Team</span>
-                <span class="month">2020-21</span>
-            </span>
-            <h2>The Title</h2>
-            <p><br></p>
-          </div>
-        </article>
-        <article>
-          <div class="inner">
-            <span class="date">
-                <span class="day">Team</span>
-                <span class="month">2019-20</span>
-            </span>
-            <h2>The Title</h2>
-            <p><br></p>
-          </div>
-        </article>
-        <article>
-          <div class="inner">
-            <span class="date">
-                <span class="day">Team</span>
-                <span class="month">2018-19</span>
-            </span>
-            <h2>The Title</h2>
-            <p><br></p>
-          </div>
-        </article>
-        <article>
-          <div class="inner">
-            <span class="date">
-                <span class="day">Team</span>
-                <span class="month">2017-18</span>
-            </span>
-            <h2>The Title</h2>
-            <p><br></p>
-          </div>
-        </article>
-        <article>
-          <div class="inner">
-            <span class="date">
-                <span class="day">Team</span>
-                <span class="month">2016-17</span>
-            </span>
-            <h2>The Title</h2>
-            <p><br></p>
-          </div>
-        </article>
-        <article>
-          <div class="inner">
-            <span class="date">
-                <span class="day">Team</span>
-                <span class="month">2015-16</span>
-            </span>
-            <h2>The Title</h2>
-            <p><br></p>
-          </div>
-        </article>
-      </section>
+        </div>
+        </div>
+      </div>
+    </article>
+    <article>
+      <div class="inner">
+        <span class="date">
+          <span class="day">Team</span>
+          <span class="month">2019-20</span>
+        </span>
+        <div class="cont">
+          <h2>As we lose ourselves in the service of others, we discover our own lives and our own happiness.</h2>
+          <p></p>
+        </div>
+      </div>
+    </article>
+    <article>
+      <div class="inner">
+        <span class="date">
+          <span class="day">Team</span>
+          <span class="month">2018-19</span>
+        </span>
+        <div class="cont">
+          <h2>You must never be fearful about what you are doing when it is right.</h2>
+          <p></p>
+        </div>
+      </div>
+    </article>
+    <article>
+      <div class="inner">
+        <span class="date">
+          <span class="day">Team</span>
+          <span class="month">2017-18</span>
+        </span>
+        <div class="cont">
+          <h2>Alone we can do so little; together we can do so much!</h2>
+          <p></p>
+        </div>
+      </div>
+    </article>
+    <article>
+      <div class="inner">
+        <span class="date">
+          <span class="day">Team</span>
+          <span class="month">2016-17</span>
+        </span>
+        <div class="cont">
+          <h2>The joy of service and the joy of inner growth through work is the sufficient recompense of the selfless worker.</h2>
+          <p></p>
+        </div>
+      </div>
+    </article>
+    <article>
+      <div class="inner">
+        <span class="date">
+          <span class="day">Team</span>
+          <span class="month">2015-16</span>
+        </span>
+        <div class="cont">
+          <h2>The national ideals of India are renunciation, and service ... if you want to find God, serve man.</h2>
+          <p></p>
+        </div>
+      </div>
+    </article>
+  </section>
 </body>
 
 </html>
